@@ -1,15 +1,10 @@
-package roblar.adventofcode.year2021
+package roblar.adventofcode.year2021.day01
 
+import roblar.adventofcode.FileUtils
 import java.util.LinkedList
-import kotlin.system.exitProcess
 
 fun main() {
-    val reader = {}.javaClass.getResourceAsStream("/2021_01_input.txt")?.bufferedReader()
-    if (reader == null) {
-        println("Could not read file")
-        exitProcess(-1)
-    }
-
+    val reader = FileUtils.getBufferedReaderFromResource("/2021_01_input.txt")
     val slidingWindowSize = 3
     val measurementQueue = LinkedList<Int>()
     var depthIncreaseCount = 0

@@ -1,14 +1,9 @@
-package roblar.adventofcode.year2021
+package roblar.adventofcode.year2021.day02
 
-import kotlin.system.exitProcess
+import roblar.adventofcode.FileUtils
 
 fun main() {
-    val reader = {}.javaClass.getResourceAsStream("/2021_02_input.txt")?.bufferedReader()
-    if (reader == null) {
-        println("Could not read file")
-        exitProcess(-1)
-    }
-
+    val reader = FileUtils.getBufferedReaderFromResource("/2021_02_input.txt")
     val commands = ArrayList<Command>()
 
     while(reader.ready()) {
