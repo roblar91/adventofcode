@@ -21,5 +21,14 @@ fun main() {
         }
     }
 
-    println()
+    var lastBoardToWin: BingoBoard? = null
+    for (draw in draws) {
+        for (board in boards) {
+            if (!board.win && board.drawAndCheckBingo(draw)) {
+                lastBoardToWin = board
+            }
+        }
+    }
+
+    println("Score of last board to win: ${lastBoardToWin?.getScore()}")
 }
